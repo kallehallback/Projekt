@@ -15,5 +15,34 @@ public class Blog {
             }
         }
     }
+    public ArrayList<String> showTitles() {
+        ArrayList<String> titles = new ArrayList<String>();
+        for(int i=0;i<posts.size();i++){
+            Post testPost = posts.get(i);
+            titles.add(testPost.getTitle());
+        }
+        return titles;
+    }
+    public String showPost(String title) {
+        String content = "";
+        for(int i=0;i< posts.size();i++){
+            Post testPost = posts.get(i);
+            if (testPost.getTitle().equals(title)){
+                content = testPost.getContent();
+            }
+        }
+        return content;
+    }
+    public String showAuthor(String title) {
+        String author = "";
+        for(int i=0;i< posts.size();i++){
+            Post testPost = posts.get(i);
+            if (testPost.getTitle().equals(title)){
+                author = testPost.getAuthor();
+            }
+        }
+        return author;
+    }
+
 
 }
