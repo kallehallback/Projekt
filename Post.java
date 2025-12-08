@@ -2,11 +2,11 @@ package Classes;
 
 public class Post {
     private String title;
-    private String author;
+    private Author author;
     private String content;
 
 
-    public Post(String title, String author, String content){
+    public Post(String title, Author author, String content){
         this.title = title;
         this.author = author;
         this.content = content;
@@ -15,12 +15,12 @@ public class Post {
         title = this.title;
         return title;
     }
-    public String getAuthor() {
+    public Author getAuthor() {
         author = this.author;
-        return author;
+        return this.author;
     }
     public String getContent() {
-        author = this.content;
-        return content;
+        content = this.content;
+        return this.content;
     }
 }
