@@ -1,7 +1,6 @@
 package se.yrgo.blog;
 
 public class Author {
-
     private int id;
     private String name;
     private String email;
@@ -34,10 +33,10 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author { " +
+        return "Author{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                " }";
+                '}';
     }
 }
