@@ -11,8 +11,9 @@ public class Main {
             String choice = "bla";
             String title;
             String content;
-            Blog blog = new Blog();
-            Author author1 = new Author(1, "Kalle", "kalle@example.com");
+            Archive blogArchive = new Archive();
+            Author author1 = blogArchive.readAuthor();
+            Blog blog = blogArchive.readPosts();
 
             while (!choice.equals("0")) {
 
@@ -37,6 +38,7 @@ public class Main {
                     System.out.println("Skriv din e-postadress.");
                     String mail = scanner.nextLine();
                     author1.setEmail(mail);
+                    blogArchive.writeAuthor(author1);
                     
                 } else if (choice.equals("2")) {
                     System.out.println("Välj en titel.");
@@ -44,6 +46,7 @@ public class Main {
                     System.out.println("Skriv innehåll.");
                     content = scanner.nextLine();
                     blog.addPost(title, author1, content);
+                    blogArchive.writePost(title, content);
                     System.out.println("Tryck ENTER för att fortsätta.");
                     choice = scanner.nextLine();
 
